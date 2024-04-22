@@ -41,7 +41,7 @@ namespace MineSweeper
                 {
                     if (x != 0 || y != 0)
                     {
-                        if (Grid.Slots[y][x].isBomb)
+                        if (Grid.Slots[Slot.Position.Y + y][Slot.Position.X + x].isBomb)
                             bombCount++;
                     }
                 }
