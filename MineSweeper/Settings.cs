@@ -18,7 +18,7 @@ namespace MineSweeper
         public Settings()
         {
             GridDimentions = new Point(20, 20);
-            gridBombDensity = 0.4F;
+            gridBombDensity = 0.17F;
 
             slotRenderDimentions = new Point(26, 26);
         }
