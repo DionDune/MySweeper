@@ -13,7 +13,6 @@ namespace MineSweeper
         public float gridBombDensity { get; set; }
 
         public Point slotRenderDimentions { get; set; }
-        public int slotRenderBorder { get; set; }
 
 
         public Settings()
@@ -22,7 +21,6 @@ namespace MineSweeper
             gridBombDensity = 0.4F;
 
             slotRenderDimentions = new Point(26, 26);
-            slotRenderBorder = 2;
         }
     }
 }
