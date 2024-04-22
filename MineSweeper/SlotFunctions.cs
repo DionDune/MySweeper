@@ -66,6 +66,8 @@ namespace MineSweeper
                 {
                     // Cascade reveal Logic
                 }
+
+                Slot.isRevealed = true;
             }
         }
     }
