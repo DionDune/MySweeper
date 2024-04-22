@@ -12,6 +12,7 @@ namespace MineSweeper
         private SpriteBatch _spriteBatch;
 
         Settings Settings;
+        Textures Textures;
         Grid Grid;
 
         Texture2D Texture_White;
@@ -31,6 +32,7 @@ namespace MineSweeper
         protected override void Initialize()
         {
             Settings = new Settings();
+            Textures = new Textures();
             Grid = new Grid(
                 Settings.GridDimentions, 
                 Settings.gridBombDensity
