@@ -46,8 +46,21 @@ namespace MineSweeper
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //Procedurally Creating and Assigning a 1x1 white texture to Color_White
-            Texture_White = new Texture2D(GraphicsDevice, 1, 1);
-            Texture_White.SetData(new Color[1] { Color.White });
+            Textures.White = new Texture2D(GraphicsDevice, 1, 1);
+            Textures.White.SetData(new Color[1] { Color.White });
+
+            Textures.Tile = Content.Load<Texture2D>("Tile");
+            Textures.TileRevealedEmpty = Content.Load<Texture2D>("TileEmpty");
+            Textures.TileBomb = Content.Load<Texture2D>("TileBomb");
+            Textures.TileFlagged = Content.Load<Texture2D>("TileFlag");
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum1"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum2"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum3"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum4"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum5"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum6"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum7"));
+            Textures.TileNum.Add(Content.Load<Texture2D>("TileNum8"));
         }
 
 
