@@ -89,31 +89,25 @@ namespace MineSweeper
                 );
 
 
-            // Grid Base
-            _spriteBatch.Draw(Texture_White, new Rectangle(SlotPos.X,
-                                                           SlotPos.Y,
-                                                           Grid.Dimentions.X * Settings.slotRenderDimentions.X, 
-                                                           Grid.Dimentions.Y * Settings.slotRenderDimentions.Y),
-                                                           Color.Gray);
             foreach (List<GridSlot> SlotRow in Grid.Slots)
             {
                 foreach (GridSlot Slot in SlotRow)
                 {
-                    _spriteBatch.Draw(Texture_White, new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X) + Settings.slotRenderBorder,
-                                                                   SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y) + Settings.slotRenderBorder,
-                                                                   Settings.slotRenderDimentions.X - (Settings.slotRenderBorder * 2),
-                                                                   Settings.slotRenderDimentions.Y - (Settings.slotRenderBorder * 2)),
+                    _spriteBatch.Draw(Textures.Tile, new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X),
+                                                                   SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y),
+                                                                   Settings.slotRenderDimentions.X,
+                                                                   Settings.slotRenderDimentions.Y),
                                                                    Color.White);
 
                     if (Slot.isRevealed)
                     {
                         if (Slot.isBomb)
                         {
-                            _spriteBatch.Draw(Texture_White, new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X) + (Settings.slotRenderDimentions.X / 4),
-                                                                   SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y) + (Settings.slotRenderDimentions.Y / 4),
-                                                                   Settings.slotRenderDimentions.X / 2,
-                                                                   Settings.slotRenderDimentions.Y / 2),
-                                                                   Color.Red);
+                            _spriteBatch.Draw(Textures.TileBomb, new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X),
+                                                                            SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y),
+                                                                            Settings.slotRenderDimentions.X,
+                                                                            Settings.slotRenderDimentions.Y),
+                                                                            Color.White);
                         }
                     }
                 }
