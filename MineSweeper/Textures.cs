@@ -17,5 +17,10 @@ namespace MineSweeper
         public Texture2D TileFlagged { get; set; }
 
         public Texture2D White;
+
+        public Textures()
+        {
+            TileNum = new List<Texture2D>();
+        }
     }
 }
