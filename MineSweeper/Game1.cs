@@ -109,6 +109,30 @@ namespace MineSweeper
                                                                             Settings.slotRenderDimentions.Y),
                                                                             Color.White);
                         }
+                        else if (Slot.surroundingBombCount > 0)
+                        {
+                            _spriteBatch.Draw(Textures.TileNum[Slot.surroundingBombCount - 1], new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X),
+                                                                            SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y),
+                                                                            Settings.slotRenderDimentions.X,
+                                                                            Settings.slotRenderDimentions.Y),
+                                                                            Color.White);
+                        }
+                        else if (Slot.surroundingBombCount == 0)
+                        {
+                            _spriteBatch.Draw(Textures.TileRevealedEmpty, new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X),
+                                                                            SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y),
+                                                                            Settings.slotRenderDimentions.X,
+                                                                            Settings.slotRenderDimentions.Y),
+                                                                            Color.White);
+                        }
+                    }
+                    else if (Slot.isFlagged)
+                    {
+                        _spriteBatch.Draw(Textures.TileFlagged, new Rectangle(SlotPos.X + (Slot.Position.X * Settings.slotRenderDimentions.X),
+                                                                            SlotPos.Y + (Slot.Position.Y * Settings.slotRenderDimentions.Y),
+                                                                            Settings.slotRenderDimentions.X,
+                                                                            Settings.slotRenderDimentions.Y),
+                                                                            Color.White);
                     }
                 }
             }
