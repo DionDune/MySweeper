@@ -14,24 +14,6 @@ namespace MineSweeper
             Point XRange = new Point(-1, 1);
             Point YRange = new Point(-1, 1);
 
-            // Ensure function does not check beyond grid boundaries
-            if (Slot.Position.X == 0)
-            {
-                XRange = new Point(0, XRange.Y);
-            }
-            if (Slot.Position.X == Grid.Dimentions.X - 1)
-            {
-                XRange = new Point(XRange.X, 0);
-            }
-            if (Slot.Position.Y == 0)
-            {
-                YRange = new Point(0, YRange.Y);
-            }
-            if (Slot.Position.Y == Grid.Dimentions.Y - 1)
-            {
-                YRange = new Point(YRange.X, 0);
-            }
-
 
             int bombCount = 0;
 
@@ -39,7 +21,13 @@ namespace MineSweeper
             {
                 for (int x = XRange.X; x <= XRange.X; x++)
                 {
-                    if (x != 0 || y != 0)
+                    if ((x != 0 || y != 0) &&
+                        (
+                        Slot.Position.X + x >= 0 &&
+                        Slot.Position.X + x <= Grid.Dimentions.X - 1 &&
+                        Slot.Position.Y + y >= 0 &&
+                        Slot.Position.Y + y <= Grid.Dimentions.Y - 1
+                        ))
                     {
                         if (Grid.Slots[Slot.Position.Y + y][Slot.Position.X + x].isBomb)
                             bombCount++;
