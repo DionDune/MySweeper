@@ -11,26 +11,29 @@ namespace MineSweeper
     {
         public static int getSurroundingBombCount(Grid Grid, GridSlot Slot)
         {
-            Point XRange = new Point(-1, 1);
-            Point YRange = new Point(-1, 1);
+            Point XRange = new Point(Slot.Position.X - 1, Slot.Position.X + 1);
+            Point YRange = new Point(Slot.Position.Y - 1, Slot.Position.Y + 1);
 
 
             int bombCount = 0;
 
             for (int y = YRange.X; y <= YRange.Y; y++)
             {
-                for (int x = XRange.X; x <= XRange.X; x++)
+                for (int x = XRange.X; x <= XRange.Y; x++)
                 {
-                    if ((x != 0 || y != 0) &&
-                        (
-                        Slot.Position.X + x >= 0 &&
-                        Slot.Position.X + x <= Grid.Dimentions.X - 1 &&
-                        Slot.Position.Y + y >= 0 &&
-                        Slot.Position.Y + y <= Grid.Dimentions.Y - 1
-                        ))
+                    //Not the current slot
+                    if (x != Slot.Position.X || y != Slot.Position.Y)
                     {
-                        if (Grid.Slots[Slot.Position.Y + y][Slot.Position.X + x].isBomb)
-                            bombCount++;
+                        // Not beyond bounds
+                        if (x >= 0 && x <= Grid.Dimentions.X - 1 &&
+                            y >= 0 && y <= Grid.Dimentions.Y - 1)
+                        {
+                            //Is Bomb
+                            if (Grid.Slots[y][x].isBomb)
+                            {
+                                bombCount++;
+                            }
+                        }
                     }
                 }
             }
