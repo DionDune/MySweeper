@@ -50,7 +50,7 @@ namespace MineSweeper
             return bombCount;
         }
 
-        public void revealSlot(Grid Grid, GridSlot Slot)
+        public static void revealSlot(Grid Grid, GridSlot Slot)
         {
             if (Slot.isBomb)
             {
