@@ -81,14 +81,28 @@ namespace MineSweeper
 
         public static void flagSlot(GridSlot Slot)
         {
-            if (Slot.isBomb)
+            // Deflag slot
+            if (Slot.isFlagged)
             {
-                // Bomb Counter Decrease
+                Slot.isFlagged = false;
+                // Flag Counter Decrease
+
+                if (Slot.isBomb)
+                {
+                    // Internal Bomb Counter Increase
+                }
             }
+            // Flag slot
+            else
+            {
+                Slot.isFlagged = true;
+                // Flag Counter Increase
 
-            // Flag Counter Increase
-
-            Slot.isFlagged = true;
+                if (Slot.isBomb)
+                {
+                    // Internal Bomb Counter Decrease
+                }
+            }
         }
     }
 }
