@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MineSweeper
 {
-    public class Game1 : Game
+    public class MySweeper : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
@@ -15,7 +15,7 @@ namespace MineSweeper
         Textures Textures;
         Grid Grid;
 
-        public Game1()
+        public MySweeper()
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferWidth = 1800;
