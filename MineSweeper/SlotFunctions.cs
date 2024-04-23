@@ -104,5 +104,16 @@ namespace MineSweeper
                 }
             }
         }
+
+        public static void revealGrid(Grid Grid)
+        {
+            foreach (List<GridSlot> Row in Grid.Slots)
+            {
+                foreach (GridSlot Slot in Row)
+                {
+                    revealSlot(Grid, Slot, false);
+                }
+            }
+        }
     }
 }
