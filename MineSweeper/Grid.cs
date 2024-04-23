@@ -11,12 +11,14 @@ namespace MineSweeper
     {
         public List<List<GridSlot>> Slots { get; set; }
         public Point Dimentions { get; set; }
+        public Point ScreenOffset { get; set; }
 
-        public Grid(Point dimentions, float bombDensity)
+        public Grid(Settings settings)
         {
-            Dimentions = dimentions;
+            Dimentions = settings.GridDimentions;
 
-            GenerateGrid(bombDensity);
+            GenerateGrid(settings.gridBombDensity);
+            SetScreenOffset(settings);
         }
 
 
@@ -40,6 +42,12 @@ namespace MineSweeper
                     }
                 }
             }
+        }
+
+        private void SetScreenOffset(Settings settings)
+        {
+            ScreenOffset = new Point(-((settings.slotRenderDimentions.X * Dimentions.X) / 2), 
+                                     -((settings.slotRenderDimentions.Y * Dimentions.Y) / 2));
         }
     }
     internal class GridSlot

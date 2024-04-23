@@ -31,10 +31,7 @@ namespace MineSweeper
         {
             Settings = new Settings();
             Textures = new Textures();
-            Grid = new Grid(
-                Settings.GridDimentions, 
-                Settings.gridBombDensity
-                );
+            Grid = new Grid( Settings );
 
             base.Initialize();
         }
