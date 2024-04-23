@@ -83,8 +83,8 @@ namespace MineSweeper
 
 
             Point SlotPos = new Point(
-                (_graphics.PreferredBackBufferWidth / 2) - ((Grid.Slots[0].Count() * Settings.slotRenderDimentions.X) / 2),
-                (_graphics.PreferredBackBufferHeight / 2) - ((Grid.Slots.Count() * Settings.slotRenderDimentions.Y) / 2)
+                (_graphics.PreferredBackBufferWidth / 2) + Grid.ScreenOffset.X,
+                (_graphics.PreferredBackBufferHeight / 2) + Grid.ScreenOffset.Y
                 );
 
 
