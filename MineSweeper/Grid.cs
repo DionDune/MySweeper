@@ -21,7 +21,7 @@ namespace MineSweeper
         }
 
 
-        public void SetDimentions(Settings settings)
+        private void SetDimentions(Settings settings)
         {
             Dimentions = settings.GridDimentions;
         }
