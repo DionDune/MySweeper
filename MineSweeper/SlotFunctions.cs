@@ -87,7 +87,6 @@ namespace MineSweeper
 
             Slot.isRevealed = false;
         }
-
         public static void flagSlot(GridSlot Slot)
         {
             // Deflag slot
@@ -114,6 +113,10 @@ namespace MineSweeper
             }
         }
 
+        public static void resetGrid(Settings Settings, Grid Grid)
+        {
+            Grid.Regenerate(Settings);
+        }
         public static void revealGrid(Grid Grid)
         {
             foreach (List<GridSlot> Row in Grid.Slots)
