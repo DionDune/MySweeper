@@ -51,6 +51,13 @@ namespace MineSweeper
             ScreenOffset = new Point(-((settings.slotRenderDimentions.X * Dimentions.X) / 2), 
                                      -((settings.slotRenderDimentions.Y * Dimentions.Y) / 2));
         }
+
+        public void Regenerate(Settings settings)
+        {
+            SetDimentions(settings);
+            GenerateGrid(settings.gridBombDensity);
+            SetScreenOffset(settings);
+        }
     }
     internal class GridSlot
     {
