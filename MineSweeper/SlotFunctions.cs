@@ -45,6 +45,8 @@ namespace MineSweeper
         {
             if (Slot.isBomb && isPlayerMove)
             {
+                Slot.isRevealed = true;
+
                 // Lose Logic
             }
             else if (!Slot.isRevealed)
