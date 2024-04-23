@@ -69,7 +69,7 @@ namespace MineSweeper
             Grid newGrid = new Grid(settings);
             GridSlot newSlot = newGrid.Slots[SlotPosition.Y][SlotPosition.X];
 
-            while (SlotFunctions.getSurroundingBombCount(newGrid, newSlot) != 0)
+            while (SlotFunctions.getSurroundingBombCount(newGrid, newSlot) != 0 || newSlot.isBomb)
             {
                 newGrid = new Grid(settings);
                 newSlot = newGrid.Slots[newSlot.Position.Y][newSlot.Position.X];
