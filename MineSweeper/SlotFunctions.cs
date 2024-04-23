@@ -78,6 +78,15 @@ namespace MineSweeper
                 Slot.isRevealed = true;
             }
         }
+        private static void hideSlot(Grid Grid, GridSlot Slot, bool removeFlags)
+        {
+            if (removeFlags)
+            {
+                Slot.isFlagged = false;
+            }
+
+            Slot.isRevealed = false;
+        }
 
         public static void flagSlot(GridSlot Slot)
         {
@@ -112,6 +121,16 @@ namespace MineSweeper
                 foreach (GridSlot Slot in Row)
                 {
                     revealSlot(Grid, Slot, false);
+                }
+            }
+        }
+        public static void hideGrid(Grid Grid)
+        {
+            foreach (List<GridSlot> Row in Grid.Slots)
+            {
+                foreach (GridSlot Slot in Row)
+                {
+                    hideSlot(Grid, Slot, true);
                 }
             }
         }
