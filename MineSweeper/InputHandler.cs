@@ -108,7 +108,14 @@ namespace MineSweeper
             KeyPresses_Current = Keyboard.GetState().GetPressedKeys().ToList();
 
 
-            // Key Press Logic
+            if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.G) == true)
+            {
+                SlotFunctions.revealGrid(grid);
+            }
+            else if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.H) == true)
+            {
+                SlotFunctions.hideGrid(grid);
+            }
 
 
             KeyPresses_Previous = KeyPresses_Current;
