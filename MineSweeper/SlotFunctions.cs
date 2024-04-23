@@ -69,13 +69,45 @@ namespace MineSweeper
                 int bombCount = getSurroundingBombCount(Grid, Slot);
 
                 Slot.surroundingBombCount = bombCount;
+                Slot.isRevealed = true;
 
                 if (bombCount == 0 && isPlayerMove)
                 {
-                    // Cascade reveal Logic
+                    revealSlotCascade(Grid, Slot);
                 }
+            }
+        }
+        private static void revealSlotCascade(Grid Grid, GridSlot Slot)
+        {
+            revealSlot(Grid, Slot, true);
 
-                Slot.isRevealed = true;
+            Point XRange = new Point(Slot.Position.X - 1, Slot.Position.X + 1);
+            Point YRange = new Point(Slot.Position.Y - 1, Slot.Position.Y + 1);
+
+            for (int y = YRange.X; y <= YRange.Y; y++)
+            {
+                for (int x = XRange.X; x <= XRange.Y; x++)
+                {
+                    // Not beyond bounds
+                    if (x >= 0 && x <= Grid.Dimentions.X - 1 &&
+                        y >= 0 && y <= Grid.Dimentions.Y - 1)
+                    {
+                        // Not Revealed or flagged
+                        if (!Grid.Slots[y][x].isRevealed && !Grid.Slots[y][x].isFlagged)
+                        {
+                            int bombCount = getSurroundingBombCount(Grid, Grid.Slots[y][x]);
+
+                            if (bombCount == 0)
+                            {
+                                revealSlotCascade(Grid, Grid.Slots[y][x]);
+                            }
+                            else
+                            {
+                                revealSlot(Grid, Grid.Slots[y][x], true);
+                            }
+                        }
+                    }
+                }
             }
         }
         private static void hideSlot(Grid Grid, GridSlot Slot, bool removeFlags)
