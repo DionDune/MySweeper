@@ -92,7 +92,7 @@ namespace MineSweeper
                         (Mouse.GetState().Y - GridPosition.Y) / settings.slotRenderDimentions.Y
                         );
 
-                    // Flag Function Call
+                    SlotFunctions.flagSlot(grid.Slots[MouseGridPosition.Y][MouseGridPosition.X]);
                 }
             }
         }
