@@ -63,5 +63,17 @@ namespace MineSweeper
                 Slot.isRevealed = true;
             }
         }
+
+        public static void flagSlot(GridSlot Slot)
+        {
+            if (Slot.isBomb)
+            {
+                // Bomb Counter Decrease
+            }
+
+            // Flag Counter Increase
+
+            Slot.isFlagged = true;
+        }
     }
 }
