@@ -113,5 +113,19 @@ namespace MineSweeper
 
             KeyPresses_Previous = KeyPresses_Current;
         }
+
+        private bool? isNewKeyPress(List<Keys> Previouse, List<Keys> New, Keys Key)
+            // Returns null not pressed, true if new press, false if not new press
+        {
+            if (New.Contains(Key))
+            {
+                if (Previouse.Contains(Key))
+                    return false;
+                else
+                    return true;
+            }
+            else
+                return null;
+        }
     }
 }
