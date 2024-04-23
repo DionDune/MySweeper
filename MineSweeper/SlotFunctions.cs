@@ -41,9 +41,9 @@ namespace MineSweeper
             return bombCount;
         }
 
-        public static void revealSlot(Grid Grid, GridSlot Slot)
+        public static void revealSlot(Grid Grid, GridSlot Slot, bool isPlayerMove)
         {
-            if (Slot.isBomb)
+            if (Slot.isBomb && isPlayerMove)
             {
                 // Lose Logic
             }
@@ -53,7 +53,7 @@ namespace MineSweeper
 
                 Slot.surroundingBombCount = bombCount;
 
-                if (bombCount == 0)
+                if (bombCount == 0 && isPlayerMove)
                 {
                     // Cascade reveal Logic
                 }
