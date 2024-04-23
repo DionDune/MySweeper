@@ -108,15 +108,18 @@ namespace MineSweeper
             KeyPresses_Current = Keyboard.GetState().GetPressedKeys().ToList();
 
 
+            // Reveal Grid
             if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.G) == true)
             {
                 SlotFunctions.revealGrid(grid);
             }
+            // Hide Grid
             else if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.H) == true)
             {
                 SlotFunctions.hideGrid(grid);
             }
 
+            // Regenerate Grid
             if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.R) == true)
             {
                 SlotFunctions.resetGrid(settings, grid);
