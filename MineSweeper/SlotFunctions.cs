@@ -43,6 +43,21 @@ namespace MineSweeper
 
         public static void revealSlot(Grid Grid, GridSlot Slot, bool isPlayerMove)
         {
+            
+            if (Slot.isFlagged)
+            {
+                // Nullifies attempts to reveal flagged slots
+                if (isPlayerMove)
+                    return;
+
+                // Deflag slot. Will occour when a flagged slot was not a bomb
+                else
+                {
+                    Slot.isFlagged = false;
+                }
+            }
+                
+
             if (Slot.isBomb && isPlayerMove)
             {
                 Slot.isRevealed = true;
