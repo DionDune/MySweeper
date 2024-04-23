@@ -15,13 +15,16 @@ namespace MineSweeper
 
         public Grid(Settings settings)
         {
-            Dimentions = settings.GridDimentions;
-
+            SetDimentions(settings);
             GenerateGrid(settings.gridBombDensity);
             SetScreenOffset(settings);
         }
 
 
+        public void SetDimentions(Settings settings)
+        {
+            Dimentions = settings.GridDimentions;
+        }
         private void GenerateGrid(float bombDensity)
         {
             Random random = new Random();
@@ -43,7 +46,6 @@ namespace MineSweeper
                 }
             }
         }
-
         private void SetScreenOffset(Settings settings)
         {
             ScreenOffset = new Point(-((settings.slotRenderDimentions.X * Dimentions.X) / 2), 
