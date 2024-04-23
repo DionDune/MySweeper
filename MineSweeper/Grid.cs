@@ -58,6 +58,23 @@ namespace MineSweeper
             GenerateGrid(settings.gridBombDensity);
             SetScreenOffset(settings);
         }
+
+
+        // TEMP
+        public void GenTillCascade(Settings settings, Point SlotPosition)
+        {
+            
+            Grid newGrid = new Grid(settings);
+            GridSlot newSlot = newGrid.Slots[SlotPosition.Y][SlotPosition.X];
+
+            while (SlotFunctions.getSurroundingBombCount(newGrid, newSlot) != 0)
+            {
+                newGrid = new Grid(settings);
+                newSlot = newGrid.Slots[newSlot.Position.Y][newSlot.Position.X];
+            }
+
+            Slots = newGrid.Slots;
+        }
     }
     internal class GridSlot
     {
