@@ -12,6 +12,7 @@ namespace MineSweeper
         private SpriteBatch _spriteBatch;
 
         Settings Settings;
+        InputHandler InputHandler;
         Textures Textures;
         Grid Grid;
 
@@ -30,6 +31,7 @@ namespace MineSweeper
         protected override void Initialize()
         {
             Settings = new Settings();
+            InputHandler = new InputHandler();
             Textures = new Textures();
             Grid = new Grid( Settings );
 
@@ -65,6 +67,8 @@ namespace MineSweeper
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            InputHandler.Execute(Settings, Grid, _graphics);
 
 
             base.Update(gameTime);
