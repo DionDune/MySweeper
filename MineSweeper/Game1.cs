@@ -15,8 +15,6 @@ namespace MineSweeper
         Textures Textures;
         Grid Grid;
 
-        Texture2D Texture_White;
-
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
