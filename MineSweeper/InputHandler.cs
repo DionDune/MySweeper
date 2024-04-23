@@ -117,6 +117,10 @@ namespace MineSweeper
                 SlotFunctions.hideGrid(grid);
             }
 
+            if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.R) == true)
+            {
+                SlotFunctions.resetGrid(settings, grid);
+            }
 
             KeyPresses_Previous = KeyPresses_Current;
         }
