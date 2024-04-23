@@ -66,7 +66,7 @@ namespace MineSweeper
             surroundingBombCount = 0;
 
             isFlagged = false;
-            isRevealed = true;
+            isRevealed = false;
         }
     }
 }
