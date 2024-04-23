@@ -57,6 +57,8 @@ namespace MineSweeper
             SetDimentions(settings);
             GenerateGrid(settings.gridBombDensity);
             SetScreenOffset(settings);
+
+            MySweeper.NewGrid = true;
         }
 
 
