@@ -13,9 +13,15 @@ namespace MineSweeper
         private bool isClicking_MouseLeft;
         private bool isClicking_MouseRight;
 
+        private List<Keys> KeyPresses_Previous;
+        private List<Keys> KeyPresses_Current;
+
         public InputHandler()
         {
             isClicking_MouseLeft = false;
+
+            KeyPresses_Previous = new List<Keys>();
+            KeyPresses_Current = new List<Keys>();
         }
 
 
@@ -23,6 +29,7 @@ namespace MineSweeper
         public void Execute(Settings settings, Grid grid, GraphicsDeviceManager _graphics)
         {
             MouseClickHandler(settings, grid, _graphics);
+            KeyPressHandler(settings, grid);
         }
 
         private void MouseClickHandler(Settings settings, Grid grid, GraphicsDeviceManager _graphics)
@@ -95,6 +102,16 @@ namespace MineSweeper
                     SlotFunctions.flagSlot(grid.Slots[MouseGridPosition.Y][MouseGridPosition.X]);
                 }
             }
+        }
+        private void KeyPressHandler(Settings settings, Grid grid)
+        {
+            KeyPresses_Current = Keyboard.GetState().GetPressedKeys().ToList();
+
+
+            // Key Press Logic
+
+
+            KeyPresses_Previous = KeyPresses_Current;
         }
     }
 }
