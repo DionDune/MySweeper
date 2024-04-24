@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -103,6 +104,7 @@ namespace MineSweeper
                 );
 
 
+            //Slots
             foreach (List<GridSlot> SlotRow in Grid.Slots)
             {
                 foreach (GridSlot Slot in SlotRow)
@@ -149,6 +151,22 @@ namespace MineSweeper
                                                                             Color.White);
                     }
                 }
+            }
+
+            //Flag Remaining Counter
+            string FlagsRemaining = (Grid.getBombCount() - Grid.getFlagCount()).ToString();
+            Point CounterPos = new Point(
+                SlotPos.X + ((Grid.Dimentions.X * Settings.slotRenderDimentions.X) / 2) - ((FlagsRemaining.Length * Settings.FontSize.X) / 2),
+                SlotPos.Y + (Grid.Dimentions.Y * Settings.slotRenderDimentions.Y)
+                );
+            for (int i = 0; i < FlagsRemaining.Length; i++)
+            {
+                _spriteBatch.Draw(Textures.CharNum[ int.Parse(FlagsRemaining[i].ToString()) ], new Rectangle(
+                    CounterPos.X + (i * Settings.FontSize.X),
+                    CounterPos.Y,
+                    Settings.FontSize.X,
+                    Settings.FontSize.Y
+                    ), Color.Red);
             }
 
 

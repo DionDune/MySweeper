@@ -14,6 +14,8 @@ namespace MineSweeper
 
         public Point slotRenderDimentions { get; set; }
 
+        public Point FontSize { get; set; }
+
 
         public Settings()
         {
@@ -21,6 +23,8 @@ namespace MineSweeper
             gridBombDensity = 0.18F;
 
             slotRenderDimentions = new Point(26, 26);
+
+            FontSize = new Point(52, 52);
         }
     }
 }
