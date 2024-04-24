@@ -10,7 +10,6 @@ namespace MineSweeper
     internal class Grid
     {
         public List<List<GridSlot>> Slots { get; set; }
-        private List<GridSlot> SlotsBulk { get; set; }
         public Point Dimentions { get; set; }
         public Point ScreenOffset { get; set; }
         public bool isNew { get; set; }
@@ -33,7 +32,6 @@ namespace MineSweeper
             Random random = new Random();
 
             Slots = new List<List<GridSlot>>();
-            SlotsBulk = new List<GridSlot>();
 
             for (int y = 0; y < Dimentions.Y; y++)
             {
@@ -49,7 +47,6 @@ namespace MineSweeper
                     }
 
                     Slots.Last().Add(NewSlot);
-                    SlotsBulk.Add(Slots.Last().Last());
                 }
             }
         }
