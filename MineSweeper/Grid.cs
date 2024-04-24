@@ -64,10 +64,10 @@ namespace MineSweeper
         }
 
 
-        // TEMP
-        public void GenTillCascade(Settings settings, Point SlotPosition)
+        public void genForCascade(Settings settings, Point SlotPosition)
+        // Regenerates the grid untill the slot of SlotPosition has no immediate adjacent bombs.
         {
-            
+
             Grid newGrid = new Grid(settings);
             GridSlot newSlot = newGrid.Slots[SlotPosition.Y][SlotPosition.X];
 
