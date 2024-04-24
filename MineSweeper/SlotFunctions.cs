@@ -119,7 +119,7 @@ namespace MineSweeper
 
             Slot.isRevealed = false;
         }
-        public static void flagSlot(GridSlot Slot)
+        public static void flagSlot(Grid grid, GridSlot Slot)
         {
             // Deflag slot
             if (Slot.isFlagged)
@@ -133,7 +133,7 @@ namespace MineSweeper
                 }
             }
             // Flag slot
-            else
+            else if (grid.getFlagRemainingCount() > 0 && !Slot.isRevealed)
             {
                 Slot.isFlagged = true;
                 // Flag Counter Increase
