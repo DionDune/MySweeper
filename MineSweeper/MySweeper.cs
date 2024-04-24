@@ -154,14 +154,14 @@ namespace MineSweeper
             }
 
             //Flag Remaining Counter
-            string FlagsRemaining = (Grid.getBombCount() - Grid.getFlagCount()).ToString();
+            string FlagsRemaining = Grid.getFlagRemainingCount().ToString();
             Point CounterPos = new Point(
                 SlotPos.X + ((Grid.Dimentions.X * Settings.slotRenderDimentions.X) / 2) - ((FlagsRemaining.Length * Settings.FontSize.X) / 2),
                 SlotPos.Y + (Grid.Dimentions.Y * Settings.slotRenderDimentions.Y)
                 );
             for (int i = 0; i < FlagsRemaining.Length; i++)
             {
-                _spriteBatch.Draw(Textures.CharNum[ int.Parse(FlagsRemaining[i].ToString()) ], new Rectangle(
+                _spriteBatch.Draw(Textures.CharNum[ Math.Abs(int.Parse(FlagsRemaining[i].ToString())) ], new Rectangle(
                     CounterPos.X + (i * Settings.FontSize.X),
                     CounterPos.Y,
                     Settings.FontSize.X,

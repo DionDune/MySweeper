@@ -95,7 +95,7 @@ namespace MineSweeper
 
             return count;
         }
-        public int getFlagCount()
+        private int getFlagCount()
         {
             int count = 0;
 
@@ -110,6 +110,10 @@ namespace MineSweeper
 
 
             return count;
+        }
+        public int getFlagRemainingCount()
+        {
+            return getBombCount() - getFlagCount();
         }
 
 
