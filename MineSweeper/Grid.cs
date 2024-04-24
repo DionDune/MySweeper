@@ -12,12 +12,14 @@ namespace MineSweeper
         public List<List<GridSlot>> Slots { get; set; }
         public Point Dimentions { get; set; }
         public Point ScreenOffset { get; set; }
+        public bool isNew { get; set; }
 
         public Grid(Settings settings)
         {
             SetDimentions(settings);
             GenerateGrid(settings.gridBombDensity);
             SetScreenOffset(settings);
+            isNew = true;
         }
 
 
@@ -58,7 +60,7 @@ namespace MineSweeper
             GenerateGrid(settings.gridBombDensity);
             SetScreenOffset(settings);
 
-            MySweeper.NewGrid = true;
+            isNew = true;
         }
 
 

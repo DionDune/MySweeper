@@ -78,11 +78,12 @@ namespace MineSweeper
                         (Mouse.GetState().Y - GridPosition.Y) / settings.slotRenderDimentions.Y
                         );
 
-                    if (MySweeper.NewGrid)
+                    if (grid.isNew)
                     {
                         grid.GenTillCascade(settings, MouseGridPosition);
 
-                        MySweeper.NewGrid = false;
+                        //MySweeper.NewGrid = false;
+                        grid.isNew = false;
                     }
 
                     SlotFunctions.revealSlot(grid, grid.Slots[MouseGridPosition.Y][MouseGridPosition.X], true);

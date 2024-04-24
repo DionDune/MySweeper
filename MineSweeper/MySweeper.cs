@@ -16,8 +16,6 @@ namespace MineSweeper
         Textures Textures;
         Grid Grid;
 
-        // TEMP
-        public static bool NewGrid = true;
 
         public MySweeper()
         {
