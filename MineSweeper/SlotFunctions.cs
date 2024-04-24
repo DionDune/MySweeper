@@ -125,23 +125,11 @@ namespace MineSweeper
             if (Slot.isFlagged)
             {
                 Slot.isFlagged = false;
-                // Flag Counter Decrease
-
-                if (Slot.isBomb)
-                {
-                    // Internal Bomb Counter Increase
-                }
             }
             // Flag slot
             else if (grid.getFlagRemainingCount() > 0 && !Slot.isRevealed)
             {
                 Slot.isFlagged = true;
-                // Flag Counter Increase
-
-                if (Slot.isBomb)
-                {
-                    // Internal Bomb Counter Decrease
-                }
             }
         }
 
