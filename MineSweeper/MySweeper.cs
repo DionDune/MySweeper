@@ -154,20 +154,24 @@ namespace MineSweeper
             }
 
             //Flag Remaining Counter
-            string FlagsRemaining = Grid.getFlagRemainingCount().ToString();
-            Point CounterPos = new Point(
-                SlotPos.X + ((Grid.Dimentions.X * Settings.slotRenderDimentions.X) / 2) - ((FlagsRemaining.Length * Settings.FontSize.X) / 2),
-                SlotPos.Y + (Grid.Dimentions.Y * Settings.slotRenderDimentions.Y)
-                );
-            for (int i = 0; i < FlagsRemaining.Length; i++)
+            if (!Grid.isNew)
             {
-                _spriteBatch.Draw(Textures.CharNum[ Math.Abs(int.Parse(FlagsRemaining[i].ToString())) ], new Rectangle(
-                    CounterPos.X + (i * Settings.FontSize.X),
-                    CounterPos.Y,
-                    Settings.FontSize.X,
-                    Settings.FontSize.Y
-                    ), Color.Red);
+                string FlagsRemaining = Grid.getFlagRemainingCount().ToString();
+                Point CounterPos = new Point(
+                    SlotPos.X + ((Grid.Dimentions.X * Settings.slotRenderDimentions.X) / 2) - ((FlagsRemaining.Length * Settings.FontSize.X) / 2),
+                    SlotPos.Y + (Grid.Dimentions.Y * Settings.slotRenderDimentions.Y)
+                    );
+                for (int i = 0; i < FlagsRemaining.Length; i++)
+                {
+                    _spriteBatch.Draw(Textures.CharNum[Math.Abs(int.Parse(FlagsRemaining[i].ToString()))], new Rectangle(
+                        CounterPos.X + (i * Settings.FontSize.X),
+                        CounterPos.Y,
+                        Settings.FontSize.X,
+                        Settings.FontSize.Y
+                        ), Color.Red);
+                }
             }
+            
 
 
 
