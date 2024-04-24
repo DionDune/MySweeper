@@ -63,6 +63,7 @@ namespace MineSweeper
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum7"));
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum8"));
 
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char0"));
             Textures.CharNum.Add(Content.Load<Texture2D>("Char1"));
             Textures.CharNum.Add(Content.Load<Texture2D>("Char2"));
             Textures.CharNum.Add(Content.Load<Texture2D>("Char3"));
@@ -71,6 +72,7 @@ namespace MineSweeper
             Textures.CharNum.Add(Content.Load<Texture2D>("Char6"));
             Textures.CharNum.Add(Content.Load<Texture2D>("Char7"));
             Textures.CharNum.Add(Content.Load<Texture2D>("Char8"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char9"));
         }
 
 
