@@ -10,6 +10,7 @@ namespace MineSweeper
     internal class Grid
     {
         public List<List<GridSlot>> Slots { get; set; }
+        private List<GridSlot> SlotsBulk { get; set; }
         public Point Dimentions { get; set; }
         public Point ScreenOffset { get; set; }
         public bool isNew { get; set; }
@@ -32,6 +33,7 @@ namespace MineSweeper
             Random random = new Random();
 
             Slots = new List<List<GridSlot>>();
+            SlotsBulk = new List<GridSlot>();
 
             for (int y = 0; y < Dimentions.Y; y++)
             {
@@ -39,12 +41,15 @@ namespace MineSweeper
 
                 for (int x = 0; x < Dimentions.X; x++)
                 {
-                    Slots.Last().Add(new GridSlot(x, y));
-
+                    GridSlot NewSlot = new GridSlot(x, y);
+                    
                     if (random.Next(0, 100) < (int)(bombDensity * 100))
                     {
-                        Slots.Last().Last().isBomb = true;
+                        NewSlot.isBomb = true;
                     }
+
+                    Slots.Last().Add(NewSlot);
+                    SlotsBulk.Add(Slots.Last().Last());
                 }
             }
         }
@@ -61,6 +66,27 @@ namespace MineSweeper
             SetScreenOffset(settings);
 
             isNew = true;
+        }
+
+        private List<GridSlot> getAllSlots()
+        {
+            return SlotsBulk;
+        }
+        public int getBombCount()
+        {
+            int count = 0;
+
+            List<GridSlot> Slots = getAllSlots();
+
+
+            foreach (GridSlot Slot in Slots)
+            {
+                if (Slot.isBomb)
+                    count++;
+            }
+
+
+            return count;
         }
 
 
