@@ -88,6 +88,22 @@ namespace MineSweeper
 
             return count;
         }
+        public int getFlagCount()
+        {
+            int count = 0;
+
+            List<GridSlot> Slots = getAllSlots();
+
+
+            foreach (GridSlot Slot in Slots)
+            {
+                if (Slot.isFlagged)
+                    count++;
+            }
+
+
+            return count;
+        }
 
 
         public void genForCascade(Settings settings, Point SlotPosition)
