@@ -108,7 +108,8 @@ namespace MineSweeper
                         (Mouse.GetState().Y - GridPosition.Y) / settings.slotRenderDimentions.Y
                         );
 
-                    if (grid.getFlagRemainingCount() > 0 || grid.Slots[MouseGridPosition.Y][MouseGridPosition.X].isFlagged)
+                    if ((grid.getFlagRemainingCount() > 0 || grid.Slots[MouseGridPosition.Y][MouseGridPosition.X].isFlagged) &&
+                        !grid.Slots[MouseGridPosition.Y][MouseGridPosition.X].isRevealed)
                         SlotFunctions.flagSlot(grid.Slots[MouseGridPosition.Y][MouseGridPosition.X]);
                 }
             }
