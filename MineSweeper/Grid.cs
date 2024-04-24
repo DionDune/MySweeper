@@ -70,7 +70,17 @@ namespace MineSweeper
 
         private List<GridSlot> getAllSlots()
         {
-            return SlotsBulk;
+            List<GridSlot> BulkSlots = new List<GridSlot>();
+
+            foreach (List<GridSlot> Row in Slots)
+            {
+                foreach (GridSlot Slot in Row)
+                {
+                    BulkSlots.Add(Slot);
+                }
+            }
+
+            return BulkSlots;
         }
         public int getBombCount()
         {
