@@ -51,6 +51,9 @@ namespace MineSweeper
             Textures.TileRevealedEmpty = Content.Load<Texture2D>("TileEmpty");
             Textures.TileBomb = Content.Load<Texture2D>("TileBomb");
             Textures.TileFlagged = Content.Load<Texture2D>("TileFlag");
+
+            Textures.CharDot = Content.Load<Texture2D>("CharDot");
+
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum1"));
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum2"));
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum3"));
@@ -59,6 +62,15 @@ namespace MineSweeper
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum6"));
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum7"));
             Textures.TileNum.Add(Content.Load<Texture2D>("TileNum8"));
+
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char1"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char2"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char3"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char4"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char5"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char6"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char7"));
+            Textures.CharNum.Add(Content.Load<Texture2D>("Char8"));
         }
 
 

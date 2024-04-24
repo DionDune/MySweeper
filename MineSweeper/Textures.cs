@@ -11,6 +11,8 @@ namespace MineSweeper
     internal class Textures
     {
         public List<Texture2D> TileNum { get; set; }
+        public List<Texture2D> CharNum { get; set; }
+        public Texture2D CharDot { get; set; }
         public Texture2D Tile { get; set; }
         public Texture2D TileRevealedEmpty { get; set; }
         public Texture2D TileBomb { get; set; }
@@ -21,6 +23,7 @@ namespace MineSweeper
         public Textures()
         {
             TileNum = new List<Texture2D>();
+            CharNum = new List<Texture2D>();
         }
     }
 }
