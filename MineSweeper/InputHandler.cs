@@ -29,7 +29,7 @@ namespace MineSweeper
         public void Execute(Settings settings, Grid grid, GraphicsDeviceManager _graphics)
         {
             MouseClickHandler(settings, grid, _graphics);
-            KeyPressHandler(settings, grid);
+            KeyPressHandler(settings, grid, _graphics);
         }
 
         private void MouseClickHandler(Settings settings, Grid grid, GraphicsDeviceManager _graphics)
@@ -112,7 +112,7 @@ namespace MineSweeper
                 }
             }
         }
-        private void KeyPressHandler(Settings settings, Grid grid)
+        private void KeyPressHandler(Settings settings, Grid grid, GraphicsDeviceManager _graphics)
         {
             KeyPresses_Current = Keyboard.GetState().GetPressedKeys().ToList();
 
@@ -132,6 +132,12 @@ namespace MineSweeper
             if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.R) == true)
             {
                 SlotFunctions.resetGrid(settings, grid);
+            }
+
+            // Toggle Fullscreen
+            if (isNewKeyPress(KeyPresses_Previous, KeyPresses_Current, Keys.F) == true)
+            {
+                _graphics.ToggleFullScreen();
             }
 
             KeyPresses_Previous = KeyPresses_Current;
